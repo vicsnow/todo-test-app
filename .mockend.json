@@ -1,0 +1,14 @@
+{
+	"Todo": {
+		"userId": "number",
+		"id": "int",
+		"title": "string",
+		"completed": "boolean"
+	},
+	"User": {
+		"id": "int",
+		"name": "string",
+		"username": "string",
+		"email": "string"
+	}
+}
