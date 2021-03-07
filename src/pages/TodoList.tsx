@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { ITodo } from '../entities'
 import CardWrapper from '../components/CardWrapper';
-const TODO_URL = 'https://jsonplaceholder.typicode.com/todos';
+const TODO_URL = 'https://mockend.com/vicsnow/todo-test-app/posts';
 
 export default function TodoList() {
     const [list, setlist] = useState<ITodo[]>([])
