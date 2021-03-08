@@ -35,7 +35,7 @@ export async function getTodoList(filterParams?: IFilterParams) {
 }
 
 export async function getTodoItem(itemId: number) {
-    console.log("getItem")
+    // console.log("getItem")
     if (mock.length > 0) {
         const itemIndex = mock.findIndex(v => v.id === itemId)
         console.log(mock[itemIndex], itemId)
@@ -47,12 +47,19 @@ export async function getTodoItem(itemId: number) {
 }
 
 export async function updateTodo(itemId: number, newData: Partial<ITodo>) {
-    const send = newData
-    console.log(send)
-    const response = await axios.patch(`${TODO_URL}/${itemId}`, send)
+    const send = new Todo(newData)
+    // console.log(send)
+    const response = await axios.put(`${TODO_URL}/${itemId}`, send)
     const itemIndex = mock.findIndex(v => v.id === itemId)
     mock[itemIndex] = { ...response.data }
-    console.log("patch response", response.data)
+    // console.log("patch response", response.data)
+    return response.data
+}
+
+export async function deleteTodo(itemId: number) {
+    const response = await axios.delete(`${TODO_URL}/${itemId}`)
+    mock = mock.filter(v => v.id !== itemId)
+    // console.log("patch response", response.data)
     return response.data
 }
 

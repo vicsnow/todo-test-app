@@ -24,7 +24,7 @@ export default function Todo(props: any) {
         getData()
     }, [getData])
     return (
-        <div>
+        <div className="layout">
             <Link to='/'>
                 back
             </Link>

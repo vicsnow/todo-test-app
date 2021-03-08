@@ -13,8 +13,7 @@ export default function TodoForm(props: ITodoForm) {
 
     return (
         <div>
-
-            <form>
+            <form className="form">
                 <FormField id='title' label="Title" onChange={onChange} value={data?.title} />
                 <FormCheckbox id='completed' label="Completed" onChange={onChange} value={data?.completed} />
                 <FormField id='userId' label="User ID" onChange={onChange} value={data?.userId} />
