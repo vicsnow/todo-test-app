@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/todo/:id">
+        <Route path="/todo/:id?">
           <Todo />
         </Route>
         <Route path="/">
