@@ -8,7 +8,7 @@ export interface IFormField {
 }
 export default function FormCheckbox(props: IFormField) {
     return (
-        <div>
+        <div className="form-field">
             <label htmlFor={props.id} >{props.label}</label>
             <input
                 type="checkbox"

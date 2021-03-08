@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICard } from '../entities';
+import { ICard } from './Card';
 import Card from './Card';
 // import { getUser } from '../services/users';
 

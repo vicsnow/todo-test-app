@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { Todo, TodoList } from './pages'
+import './App.css'
 
 function App() {
   return (
