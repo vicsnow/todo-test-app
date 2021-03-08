@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { IUser, ICard } from '../entities';
-import axios from 'axios';
+import React from 'react'
+import { ICard } from '../entities';
 import Card from './Card';
+// import { getUser } from '../services/users';
 
 export default function CardWrapper(props: ICard) {
     const { userId } = props
-    const [user, setUser] = useState<IUser | undefined>(undefined);
-    useEffect(() => {
-        async function getUser() {
-            if (userId) axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`).then(result =>
-                setUser(result.data)
-            )
-        }
+    // const [user, setUser] = useState<IUser | undefined>(undefined);
+    // useEffect(() => {
+    //     async function fetchUser() {
+    //         if (userId) getUser(userId).then(result =>
+    //             setUser({ ...result })
+    //         )
+    //     }
 
-        getUser();
-    }, [userId])
-    return <Card {...props} username={user?.username} />
+    //     fetchUser();
+    // }, [userId])
+    return <Card {...props} username={userId?.toString()} />
 }

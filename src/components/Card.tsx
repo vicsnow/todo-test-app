@@ -1,11 +1,15 @@
 import React from 'react'
-import { ICard } from '../entities'
 import { Link } from 'react-router-dom'
+import { ITodo } from '../entities';
 
+export interface ICard extends ITodo {
+    username?: string
+    onCheckbox(id: number, newValue: boolean): any
+}
 /** Todo list card */
 export default function Card(props: ICard) {
     const { title, id, username, completed, onCheckbox } = props;
-    const onCheckboxClick = (e: any) => onCheckbox(id, !completed)
+    const onCheckboxClick = (e: any) => onCheckbox(id || 0, !completed)
 
     return (
         <div>
